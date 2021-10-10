@@ -11,7 +11,6 @@ if (x) == ['a', 3] you should return [['a', 3], ['a', 3], ['a', 3]].
 """
 
 def explode(arr):
-    result = []
     amount = 0
     if type(arr[0]) == int:
         amount += arr[0]
@@ -21,8 +20,4 @@ def explode(arr):
     if type(arr[0]) != int and type(arr[1]) != int:
         return 'Void!'
 
-    for a in range(amount):
-        result.append(arr[0:2])
-
-
-    return result
+    return [arr for _ in range(amount)]
