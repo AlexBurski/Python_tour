@@ -8,6 +8,6 @@ An isogram is a word that has no repeating letters, consecutive or non-consecuti
 """
 
 def is_isogram(string):
-    if len(string.lower()) == len(set(string.lower())):
+    if len(string) == len(set(string.lower())):
         return True
     return False
