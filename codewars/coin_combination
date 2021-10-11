@@ -1,0 +1,39 @@
+"""
+The function takes cents value (int) and needs to return the minimum number of coins combination of the same value.
+
+The function should return an array where
+coins[0] = pennies ==> $00.01
+coins[1] = nickels ==> $00.05
+coins[2] = dimes ==> $00.10
+coins[3] = quarters ==> $00.25
+
+So for example:
+coinCombo(6) --> [1, 1, 0, 0]
+"""
+
+def coin_combo(cents):
+    pennies = 1
+    nickles = 5
+    dime = 10
+    quaters = 25
+    i_0 = 0
+    i_1 = 0
+    i_2 = 0
+    i_3 = 0
+    if cents >= quaters:
+        i_3 = cents // quaters
+        cents = cents % quaters
+
+    if cents >= dime:
+        i_2 = cents // dime
+        cents = cents % dime
+
+    if cents >= nickles:
+        i_1 = cents // nickles
+        cents = cents % nickles
+
+    if cents >= pennies:
+        i_0 = cents // pennies
+        cents = cents % pennies
+    result = [i_0, i_1,i_2,i_3]
+    return result
