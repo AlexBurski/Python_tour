@@ -26,3 +26,5 @@ def make_readable(seconds):
         seconds = '0' + str(seconds)
 
     return f'{hours}:{min}:{seconds} '
+
+#  return f'{hours:02d}:{min:02d}:{seconds:02d} ' as a variation
