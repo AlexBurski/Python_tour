@@ -16,3 +16,32 @@ def find_it(seq):
     for num in seq:
         if (seq.count(num)) % 2 == 1:
             return num
+
+
+"""
+
+def find_it1(seq):
+    set_of_list = set(seq)
+    
+    for element in set_of_list:
+        if seq.count(element) % 2 == 1:
+            return element
+            
+"""
+"""
+
+import collections
+
+def find_it(seq):
+    count = collections.Counter()
+
+    for element in seq:
+        count[element] += 1
+
+    listt  = list(count.items())
+
+    for each in listt:
+        if each[1] % 2 == 1:
+            return each[0]
+            
+""""
