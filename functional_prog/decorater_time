@@ -2,7 +2,7 @@ import time
 
 
 def decorater(func):
-    def inside(*args):
+    def inside(*args: tuple):
         start = time.time()
         func(*args)
         end = time.time()
