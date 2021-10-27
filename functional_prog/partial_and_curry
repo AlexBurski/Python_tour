@@ -5,6 +5,7 @@ A function that works as partial and curry
 """
 
 
+
 from functools import partial
 
 def multi(a: int, d: int):
