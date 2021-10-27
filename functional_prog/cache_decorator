@@ -20,7 +20,7 @@ def cache(func):
 
 
 @cache
-def math(x):
+def math(x: int):
     return x * 2
 
 write_num = input('Num or stop')
