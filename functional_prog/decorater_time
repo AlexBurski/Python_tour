@@ -1,6 +1,6 @@
 import time
 
-
+ 
 def decorater(func):
     def inside(*args: tuple):
         start = time.time()
