@@ -1,7 +1,7 @@
 """
 Function compose that takes infinite num of function and call then all
 """
-
+ 
 
 from functools import reduce
 
