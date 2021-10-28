@@ -1,6 +1,5 @@
 
 
-
 store = {}
 def cache(func):
 
