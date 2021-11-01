@@ -1,3 +1,4 @@
+
 from functools import lru_cache
 
 @lru_cache(10)
@@ -7,3 +8,4 @@ def dividing(x):
 print([dividing(i) for i in range(100)])
 
 print(dividing.cache_info())
+
