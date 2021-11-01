@@ -1,3 +1,9 @@
+"""
+
+A function that works as partial and curry
+
+"""
+
 from functools import partial
 
 
