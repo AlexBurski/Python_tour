@@ -16,4 +16,5 @@ def math(a: int, b: int):
     return a ** b ** 5
 
 
+
 math(9, 9)
