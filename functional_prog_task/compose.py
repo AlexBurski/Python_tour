@@ -1,4 +1,5 @@
 """
+
 Function compose that takes infinite num of function and call then all
 """
 
@@ -18,5 +19,6 @@ def compose(*func: tuple):
     return reduce(compose2, func)
 
 # f = compose(a, b, c, d)
+
 
 # print(f(4)) 
