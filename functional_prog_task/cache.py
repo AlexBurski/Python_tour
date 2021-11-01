@@ -1,3 +1,4 @@
+
 store = {}
 def cache(func):
 
@@ -25,3 +26,5 @@ while write_num != 'stop':
     print(math(int(write_num)))
     write_num = input()
 
+
+    
