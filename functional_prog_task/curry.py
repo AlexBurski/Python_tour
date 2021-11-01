@@ -1,3 +1,9 @@
+"""
+
+High order function curry
+
+"""
+
 def hello(name: str):
     def howdy(statement: str):
         print(f'hello, dear {name}. I am extremely glad to see you and say that {statement}')
