@@ -4,17 +4,14 @@ A function that works as partial and curry
 
 """
 
-from functools import partial
-
-
-def addy(x: int, y: int):
+def add_numbers(x: int, y: int):
     return x + y
 
+def add_two(x):
+    return add_numbers(x, 2)
 
-new_func = partial(addy, y=2)
 
-
-#print(new_func(5))
+#print(add_two(5))
 
 
 def multi(a: int, d: int):
@@ -25,6 +22,7 @@ def multi(a: int, d: int):
     return multi_2
 
 
-multiplication = partial(multi, d=3)
+def double_multiplication (a,b,c):
+    return multi(a,b)(c)(2)
 
-print(multiplication(2)(3)(4))
+print(double_multiplication(2,3,5))

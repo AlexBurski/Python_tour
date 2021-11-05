@@ -1,17 +1,16 @@
 import time
 
 
-def decorater(func):
-    def inside(*args: tuple, **kwargs: tuple):
+def timeit(func):
+    def inside(*args: tuple, **kwargs: dict):
         start = time.time()
         func(*args, **kwargs)
         end = time.time()
-        print(func.__name__, 'finished in ', end - start)
-        return func(*args, **kwargs)
+        return print(f'function {func.__name__} finished in {end - start}')
     return inside
 
 
-@decorater
+@timeit
 def math(a: int, b: int):
     return a ** b ** 6
 
