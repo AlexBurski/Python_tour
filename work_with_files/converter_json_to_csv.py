@@ -9,7 +9,6 @@ def json_to_csv(file_name):
             if type(data[word]) == list:
                 name = word
                 header = list(data[word][0].keys())
-        print(header)
         with open('csv_data.csv', 'w', newline='', encoding='utf-8') as csv_file:
             csv_writer = csv.writer(csv_file)
             csv_writer.writerow(header)
