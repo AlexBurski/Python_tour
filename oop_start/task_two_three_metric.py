@@ -8,13 +8,30 @@
 class Metric:
     def __init__(self, value: int, unit: str):
         self._value = value
-        self.__unit = unit
+        self._unit = unit
 
     @property
     def get_set(self):
-        if isinstance(self._value, int):
-            return self._value
-        raise ValueError("Must be an integer")
+        return self._value
+
+    @get_set.setter
+    def get_set(self, new_value: int):
+        if isinstance(new_value, int):
+            self._value = new_value
+        else:
+            raise ValueError("Must be an integer")
+
+    @get_set.deleter
+    def get_set(self):
+        del self._value
+
+if __name__ == "__main__":
+    a = Metric(1, "abc")
+    a.get_set = 125
+    print(a.get_set) # 125
+    del a.get_set
+    print(a.get_set) # AttributeError:...
+
 
 
 

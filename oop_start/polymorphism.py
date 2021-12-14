@@ -8,15 +8,12 @@ from math import sqrt
 
 
 class Figure:
-    def __init__(self):
-        pass
-
     def square(self):
-        pass
+        raise NotImplemented
 
 
 class Triangular(Figure):
-    def __init__(self, side_a, side_b, side_c):
+    def __init__(self, side_a: int, side_b: int, side_c: int):
         self.side_a = side_a
         self.side_b = side_b
         self.side_c = side_c
@@ -28,7 +25,7 @@ class Triangular(Figure):
 
 
 class Circle(Figure):
-    def __init__(self, radius):
+    def __init__(self, radius: int):
         self.radius = radius
 
     def square(self):
@@ -36,14 +33,14 @@ class Circle(Figure):
 
 
 class Rectangle(Figure):
-    def __init__(self, length, width):
-        self.length, self.width = length, width
+    def __init__(self, height: int, width: int):
+        self.height, self.width = height, width
 
     def square(self):
-        return self.length * self.width
+        return self.height * self.width
 
 
-def sum_of_squares(*args):
+def sum_of_squares(*args: tuple):
     return sum([figure.square() for figure in args])
 
 

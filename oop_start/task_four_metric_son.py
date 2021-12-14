@@ -5,17 +5,22 @@ upper_limit и lower_limit (оба параметра не обязательн�
 from task_two_three_metric import Metric
 
 
-class Check_limit(Metric):
-    def __init__(self, value: int, unit: str):
+class CheckLimit(Metric):
+    def __init__(self, value: int, unit: str, lower_limit: int = None, upper_limit: int = None):
         super().__init__(value, unit)
-
-    def is_valid(self, lower_limit=0, upper_limit=999):
         self.lower_limit = lower_limit
         self.upper_limit = upper_limit
-        return all((self._value < self.upper_limit, self._value > self.lower_limit))
+
+    def is_valid(self):
+        if self.lower_limit:
+            if self.upper_limit:
+                return all((self._value < self.upper_limit, self._value > self.lower_limit))
+            return self._value > self.lower_limit
+        elif self.upper_limit:
+            return self._value < self.upper_limit
 
 
-b = Check_limit(111, "hello")
+b = CheckLimit(111, "hello", 112, 120)
 
-print(b.is_valid(0, 100)) #-->False
-print(b.get_set)    #--> 111
+print(b.is_valid())  #-->False
+print(b.get_set)     #--> 111
