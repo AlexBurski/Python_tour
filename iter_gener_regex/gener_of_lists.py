@@ -5,8 +5,8 @@
 
 def generator_of_lists(*args):
     for each_list in args:
-        for element in each_list:
-            yield element
+        yield from each_list
+
 
 
 

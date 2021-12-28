@@ -22,4 +22,5 @@ def json_to_csv(file_name):
                 csv_writer.writerow(val.values())
 
 
-json_to_csv(file_name)
+if __name__ == "__main__":
+    json_to_csv(file_name)

@@ -6,23 +6,25 @@ r = range(1, 100) r[2] => 3"""
 
 class RangeGenerator:
     def __init__(self, start: int, end: int, step: int = 1):
-        self.values = range(start, end, step)
-        self.i = 0
+        self.start = start
+        self.end = end
+        self.step = step
+        self.index = 0
 
     def __getitem__(self, item: int):
-        if 0 <= item <= len(self.values):
-            return self.values[item]
+        if self.start <= self.start + self.step * item < self.end:
+            return self.start + self.step * item
         raise IndexError
 
     def iter(self):
         return self
 
     def __next__(self):
-        try:
-            element = self.values[self.i]
-            self.i += 1
-            return element
-        except IndexError:
+        if self.start + self.index * self.step < self.end:
+            result = self.start + self.index * self.step
+            self.index += 1
+            return result
+        else:
             raise StopIteration
 
 
@@ -36,3 +38,7 @@ for num in numbers:
                          # 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62
                          # 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85
                          # 86 87 88 89 90 91 92 93 94 95 96 97 98 99
+
+
+
+
